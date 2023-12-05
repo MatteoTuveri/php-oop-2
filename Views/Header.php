@@ -12,4 +12,12 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Movies</a></li>
+                <li><a href="books-page.php">Books</a></li>
+                <li><a href="games-page.php">Games</a></li>
+            </ul>
+        </nav>
+    </header>

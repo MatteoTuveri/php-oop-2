@@ -43,7 +43,7 @@ class Movie
         $overview = $this->overview;
         $vote = $this->vote_avarege;
         $genre = $this->genres;
-        include __DIR__.'/../Views/Card.php';
+        include __DIR__.'/../Components/Card.php';
     }
     public static function getMovieList($list,$genres){
         $items = [];
