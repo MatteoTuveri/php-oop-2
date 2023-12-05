@@ -1,32 +1,14 @@
 <?php
 include __DIR__.'/server.php';
 include __DIR__ .'/Models/Movie.php';
-
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php include __DIR__ .'/Views/Header.php';?>
+<main class="container">
+    <div class="row">
+        <?php foreach($movies as $item) {
+            $item->getCard();
+        } ?>
+    </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/db5152b6bb.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>PHP Movies</title>
-</head>
-
-<body>
-    <header></header>
-    <main class="container">
-        <div class="row">
-            <?php foreach ($movies as $item) {
-                $item->getCard();
-            }?>
-        </div>
-
-    </main>
-    <footer></footer>
-
-</body>
-
-</html>
+</main>
+<?php include __DIR__ .'/Views/Footer.php';?>
