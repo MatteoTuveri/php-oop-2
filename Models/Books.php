@@ -1,8 +1,13 @@
 <?php
+<<<<<<< HEAD
 include __DIR__ ."/printCard.php";
 include __DIR__ ."/Product.php";
 class Books extends Product {
     use PrintCard;
+=======
+include __DIR__ ."/Product.php";
+class Books extends Product {
+>>>>>>> 5abdbb4bf282bbfa932328d901865e516cc5e5d9
     private $title;
     private $img;
     private $description;
@@ -19,6 +24,7 @@ class Books extends Product {
         $this->categories = $categories;
     }
     public function getCard() {
+<<<<<<< HEAD
         $itemBook=[
         'title' => $this->title,
         'img' => $this->img,
@@ -33,6 +39,20 @@ class Books extends Product {
         ];
         return $itemBook;
     }   
+=======
+        $title = $this->title;
+        $img = $this->img;
+        $description = $this->description;
+        $authors = $this->authors;
+        $pages = $this->pages;
+        $categories = $this->categories;
+        $type = $this->type ;
+        $prezzoPieno = $this->prezzoPieno;
+        $sconto = $this->sconto;
+        $prezzo = $this->prezzo;
+        include __DIR__ .'/../Components/Card.php';
+    }
+>>>>>>> 5abdbb4bf282bbfa932328d901865e516cc5e5d9
     public static function getBooks($list) {
         $items = [];
         foreach($list as $book) {
