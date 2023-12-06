@@ -1,12 +1,14 @@
 <?php
-class Books {
+include __DIR__ ."/Product.php";
+class Books extends Product {
     private $title;
     private $img;
     private $description;
     private $authors;
     private $pages;
     private $categories;
-    public function __construct($title, $img, $description, $authors, $pages, $categories) {
+    public function __construct($title, $img, $description, $authors, $pages, $categories,$type) {
+        parent::__construct($type);
         $this->title = $title;
         $this->img = $img;
         $this->description = substr($description, 0, 100) . '...';
@@ -21,12 +23,16 @@ class Books {
         $authors = $this->authors;
         $pages = $this->pages;
         $categories = $this->categories;
-        include __DIR__ .'/../Components/Books_Card.php';
+        $type = $this->type ;
+        $prezzoPieno = $this->prezzoPieno;
+        $sconto = $this->sconto;
+        $prezzo = $this->prezzo;
+        include __DIR__ .'/../Components/Card.php';
     }
     public static function getBooks($list) {
         $items = [];
         foreach($list as $book) {
-            $bookInfo = new Books($book['title'],$book['thumbnailUrl'],$book['longDescription'],$book['authors'],$book['pageCount'],$book['categories']);
+            $bookInfo = new Books($book['title'],$book['thumbnailUrl'],$book['longDescription'],$book['authors'],$book['pageCount'],$book['categories'],'Book');
             array_push($items, $bookInfo);
         }
         return $items;
