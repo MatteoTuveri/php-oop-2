@@ -6,7 +6,7 @@ include __DIR__ .'/Models/Movie.php';
 <main class="container">
     <div class="row">
         <?php foreach($movies as $item) {
-            $item->getCard();
+            $item->printCard($item->getCard());
         } ?>
     </div>
 

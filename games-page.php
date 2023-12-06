@@ -6,7 +6,7 @@ include __DIR__.'/Models/Games.php';
 <main class="container">
     <div class="row">
         <?php foreach($games as $item) {
-            $item->getCard();
+            $item->printCard($item->getCard());
         } ?>
     </div>
 
