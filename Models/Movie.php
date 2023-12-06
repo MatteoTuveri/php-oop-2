@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
 include __DIR__ ."/printCard.php";
-=======
->>>>>>> 5abdbb4bf282bbfa932328d901865e516cc5e5d9
 include __DIR__ ."/Product.php";
 class Movie extends Product
 {
@@ -45,7 +42,6 @@ class Movie extends Product
         return $string; 
     }
     public function getCard(){
-<<<<<<< HEAD
         $itemMovie=[
         'img' => $this->poster_path,
         'title' => $this->title,
@@ -59,18 +55,6 @@ class Movie extends Product
         ];
 
         return $itemMovie;
-=======
-        $img = $this->poster_path;
-        $title = $this->title;
-        $overview = $this->overview;
-        $vote = $this->vote_avarege;
-        $genre = $this->genres;
-        $type = $this->type ;
-        $prezzoPieno = $this->prezzoPieno;
-        $sconto = $this->sconto;
-        $prezzo = $this->prezzo;
-        include __DIR__.'/../Components/Card.php';
->>>>>>> 5abdbb4bf282bbfa932328d901865e516cc5e5d9
     }
     public static function getMovieList($list,$genres){
         $items = [];
